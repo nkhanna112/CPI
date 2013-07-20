@@ -1,0 +1,35 @@
+<% provide(:title, 'About Us') %>
+<h1>About</h1>
+<p>
+  The Churn Propensity Index uses a client's relevant characteristics to determine its likelihood to churn. The index value, labeled as "regress," is determined by a multivariate linear regression model that uses proprietary data from MegaPath's data warehouse. The following six variables are used to determine the "regress" value:
+  <br/>
+  <br/>
+  LONGAGO: how long ago a particular client signed with MegaPath.
+  <br/>
+  <br/>
+  INSTALLINT: the length of time required for installation.
+  <br/>
+  <br/>
+  CUSTLIFE: how long a particular client used MegaPath's services.
+  <br/>
+  <br/>
+  CURRENT_MRC: monthly recurring revenue earned by MegaPath for providing a particular client with services.
+  <br/>
+  <br/>
+  DOWNTIME: an aggregrate value that includes the status of all trouble tickets for a particular client, the escalation level of those trouble tickets, the priority number of those trouble tickets, and the length of time that the circuit was down for those trouble tickets.
+  <br/>
+  <br/>
+  PAIN INDEX: the sheer number of trouble tickets filed for a particular client.
+  <br/>
+  <br/>
+  The robustness of the model is indicated by the low P values for each variable, low F significance level, and relatively high adjusted R Square value:
+  <br/>
+  <br/>
+  <%= image_tag 'Anova.png' %>
+  <br/>
+  <br/>
+  The search query on the home page is linked to the data warehouse, so all data is as up-to-date as possible. 
+  <br/>
+  <br/>
+  For more information, please see the  <a href="/contact">contact</a> page.
+</p>

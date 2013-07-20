@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @regress.name %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @regress.location %>
+</p>
+
+<p>
+  <b>Propensity:</b>
+  <%= @regress.propensity %>
+</p>
+
+
+<%= link_to 'Edit', edit_regress_path(@regress) %> |
+<%= link_to 'Back', regresses_path %>

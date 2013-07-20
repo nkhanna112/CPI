@@ -1,0 +1,70 @@
+<h1>Churn Propensity Index</h1>
+
+<h2>Search Query</h2>
+<%= form_for @search, :url => "/regresses/index" do |f| %>
+  <%= f.label 'Company Name' %> 
+  <%= f.text_field 'name' %> 
+  <br/>
+  <%= f.submit "search" %>
+<% end %>
+
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Location</th>
+    <th>Propensity</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @regresses.each do |regress| %>
+  <tr>
+    <td><%= regress.name %></td>
+    <td><%= regress.location %></td>
+    <td><%= regress.propensity %></td>
+    <td><%= link_to 'Show   ', regress %></td>
+    <td><%= link_to 'Edit   ', edit_regress_path(regress) %></td>
+    <td><%= link_to 'Destroy   ', regress, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+     <td class="Info"> Info </td>
+    <td id="popup"> 
+    Retail Account Characteristics
+    <br />
+    <br />
+    LONGAGO: xxxxx
+     <br />
+    INSTALLINT: xxxxx
+     <br />
+    CUSTLIFE: xxxxx
+     <br />
+    CURRENT_MRC: xxxxx
+     <br />
+    DOWNTIME: xxxxx
+      <br />
+    PAIN INDEX: xxxxx
+    <br />
+    <br />
+    (Values will be populated when app is linked to data warehouse)
+
+     </td>
+
+  </tr>
+<% end %>
+</table>
+
+
+
+<br />
+
+<%= link_to 'New Regress', new_regress_path %>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<p>*The table above is solely for developmental purposes. In the future, the search function will be linked to an Oracle view that queries data from MegaPath's data warehouse.*</p>
+
+
